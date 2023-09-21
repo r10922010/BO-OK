@@ -1,5 +1,8 @@
 # Bo OK!
-A web site about ordering book
+A website about ordering book.
+
+![圖片1](https://github.com/r10922010/BO-OK/assets/91658619/8dd5d676-0f99-4320-8d32-dca9f97a1747)
+
 
 ## How do use
 ### settings

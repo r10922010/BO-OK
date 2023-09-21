@@ -1,0 +1,305 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Noto Sans TC', sans-serif;
+}
+
+p, a, input, label, textarea, span, ul, li {
+	font-family: 'Noto Serif TC', serif;
+}
+
+input:focus, .form-control:focus {
+	box-shadow: none;
+	outline: none;
+}
+
+.body-restrict {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#background-restrict {
+	margin-bottom: 0;
+}
+
+i {
+	margin-right: 10px;
+}
+
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+h3 {
+	font-size: 40px;
+	line-height: 1.5;
+}
+
+p {
+	color: #707070;
+}
+/* 同時滿足 */
+p.lead {
+	color: black;
+}
+
+img {
+	max-width: 100%;
+}
+
+
+input[type=text] {
+	padding: 20px 20px;
+	margin: 16px 0;
+}
+
+.search-btn {
+	margin: 16px 0 0;
+	background-color: white;
+	border: none;
+}
+
+#intro .jumbotron {
+	height: 100vh;
+	margin-bottom: 0;
+}
+
+#latest h1 {
+	font-size: 45px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+#intro .container {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#logo {
+	width: 70px;
+	height: 50px;
+}
+
+.center_header {
+	height: 40px;
+}
+
+.header {
+	background: transparent;
+	position: fixed;
+	height: 80px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 0;
+	z-index: 100;
+}
+
+.color_header {
+	background-color: rgba(255,255,255,0.8);
+}
+
+.header-right {
+	float: right;
+}
+
+header li {
+	margin: 0px 15px;
+}
+
+#second {
+	padding: 80px 0px;
+}
+
+#second h3 {
+	margin-bottom: 80px;
+}
+
+#secode img {
+	margin-bottom: 13px;
+    width: 100px;
+    border-radius: 100%;
+}
+
+#latest {
+	padding: 80px 0px;
+	background: rgb(248, 248, 248);
+}
+
+#latest.show-background {
+	padding: 0px;
+	background: rgb(248, 248, 248);
+}
+
+#latest h3 {
+	margin-bottom: 80px;
+}
+
+#latest .upper {
+	position: relative;
+}
+
+#latest .inner-text {
+	bottom: -15px;
+	left: 12px;
+}
+
+#latest .upper .inner-text span {
+	background: rgba(255,255,255,0.7);
+    padding: 6px 20px;
+    border-radius: 20px;
+}
+
+#latest .upper .inner-text h4 {
+    margin-top: 17px;
+}
+
+#latest .lower {
+	padding: 10px 20px 20px 20px;
+}
+
+#latest .lower h3 {
+	font-size: 20px;
+	padding-bottom: 20px;
+	margin-top: 13px;
+	margin-bottom: 17px;
+}
+
+#latest .lower span{
+	position: absolute;
+    bottom: 20px;
+    left: 30px;
+}
+
+#latest .outer {
+	background-color: white;
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
+	height: 100%;
+	width: 100%;
+}
+
+#latest .outer a {
+	color: black;
+}
+
+#latest .outer a:hover {
+	text-decoration: none;
+}
+
+.email {
+	padding: 50px;
+}
+
+.email h3 {
+	padding-bottom: 30px;
+}
+
+.email .input-group {
+	margin-bottom: 20px;
+}
+
+footer {
+	border-top: solid 1px #c9c9c9;
+    padding: 30px 0px 18px 0px;
+}
+
+footer img {
+	width: 112px;
+	margin-bottom: 26px;
+}
+
+footer h4 {
+	margin-bottom: 26px;
+}
+
+footer a {
+	color: salmon;
+}
+
+footer ul {
+	list-style: none;
+	padding: 0;
+	float: left;
+	margin-right: 30px;
+}
+
+footer ul li {
+	margin-bottom: 10px;
+}
+
+footer ul li a {
+	color: #707070;
+}
+
+@media only screen and (max-width: 768px) {
+	#latest .col-md-4 {
+		margin-bottom: 30px;
+	}
+	#latest .outer {
+		margin-bottom: 30px;
+	}
+
+	#latest .outer img {
+		width: 100%;
+	}
+}
+
+.search-field {
+	border: none;
+}
+
+.show-background {
+	padding: 0;
+}
+
+.show-container {
+	position: relative;
+}
+
+.menu-row {
+	flex-wrap: nowrap;
+	margin: 6px;
+	transform: translateX(0);
+	transition-duration: 0.4s;
+	transition-timing-function: ease-in-out;
+	position: relative;
+}
+
+.menu {
+	overflow-x: hidden;
+	position: relative;
+}
+
+.menu-btn {
+	border-radius: 999px;
+	z-index: 3;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	font-size: 20px;
+	font-weight: 200;
+}
+
+
+.menu-btn:hover {
+	background-color: #707070;
+	border-color: #707070;
+}
+
+.menu-btn:focus {
+	box-shadow: none;
+}
+
+.menu-btn:active {
+	box-shadow: none;
+}
+
+.menu-btn-left {
+	left: 3px;
+}
+
+.menu-btn-right {
+	right: 3px;
+}

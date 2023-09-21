@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% include 'meta.html' %}
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<script src="{{ url_for('static', filename='js/functions.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+	</head>
+	<body>
+		{% include 'header.html' %}
+		<section id="intro">
+			<div class="jumbotron">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 offset-md-3 text-center">
+							<h1>隨意查查，什麼都行。</h1>
+							<form action="{{ url_for('show') }}" method="GET" onsubmit="return search_empty();">
+								<div class="input-group">
+								<input type="text" name="book_name" class="form-control form-control-lg search-field" id="book_name" placeholder="搜尋書籍" />
+								<span class="input-group-append">
+									<button type="submit" class="btn btn-outline-secondary border-left-0 search-btn">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="latest">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h3>最新書籍</h3>
+					</div>
+				</div>
+				<div class="menu text-center">
+					<div>
+						<button type="button" class="btn btn-dark menu-btn menu-btn-left">←</button>
+					</div>
+					<div>
+						<button type="button" class="btn btn-dark menu-btn menu-btn-right">→</button>
+					</div>
+					<div class="row menu-row">
+						{% for data in datas %}
+						<div class="col-md-4">
+							<div class="outer">
+								<a href="{{ data[0].link }}">
+									<div class="upper">
+										<img class="" src="{{ data[0].img }}">
+										<div class="inner-text">
+											<a href="{{ data[0].link }}"><h4> 🔥最低價🔥 {{ data[0].book_store }} NTD: {{ data[0].price }}</h4></a>
+											{% for row_data in data[1:] %}
+												<a href="{{ row_data.link }}"><h4> 🚚 {{ row_data.book_store }} NTD: {{ row_data.price }}</h4></a>
+											{% endfor %}
+										</div>
+									</div>
+									<div class="lower">
+										<h3>{{ data[0].book_name }}</h3>
+										<span><i class="fas fa-user"></i>{{ data[0].writer }}</span>
+									</div>
+								</a>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="email">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 offset-md-2 text-center">
+						<h3>訂閱，獲得第一手消息。</h3>
+					</div>
+				</div>
+				<div class="row">
+					<form action="{{ url_for('register') }}" method="GET" onsubmit="return checkEmail();" style="width: 100%;">
+						<div class="col-md-8 offset-md-2">
+							<div class="input-group input-group-lg">
+							<input type="email" name="email" class="form-control" id="email" placeholder="Email" />
+								<span class="input-group-append">
+								<button type="submit" class="btn btn-outline-secondary border-left-0">
+									<i class="fa fa fa-envelope"></i>
+								</button>
+								</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+	{% include 'footer.html' %}
+	</body>
+<html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% include 'meta.html' %}
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<script src="{{ url_for('static', filename='js/functions.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/show.js') }}"></script>
+	</head>
+	<body id="body-restrict">
+		{% include 'header.html' %}
+		<section id="latest" class="show-background">
+			<div class="jumbotron min-vh-100 text-center d-flex flex-column m-0 justify-content-center">
+				<div class="container show-container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h3>搜尋結果</h3>
+						</div>
+					</div>
+					{% if datas %}
+					<div class="menu">
+						<div>
+							<button type="button" class="btn btn-dark menu-btn menu-btn-left">←</button>
+						</div>
+						<div>
+							<button type="button" class="btn btn-dark menu-btn menu-btn-right">→</button>
+						</div>
+						<div class="row menu-row">
+							{% for data in datas %}
+							<div class="col-md-4">
+								<div class="outer">
+									<a href="{{ data[0].link }}">
+										<div class="upper">
+											<img class="" src="{{ data[0].img }}">
+											<div class="inner-text">
+												<a href="{{ data[0].link }}"><h4> 🔥最低價🔥 {{ data[0].book_store }} NTD: {{ data[0].price }}</h4></a>
+												{% for row_data in data[1:] %}
+													<a href="{{ row_data.link }}"><h4> 🚚 {{ row_data.book_store }} NTD: {{ row_data.price }}</h4></a>
+												{% endfor %}
+											</div>
+										</div>
+										<div class="lower">
+											<h3>{{ data[0].book_name }}</h3>
+											<span><i class="fas fa-user"></i>{{ data[0].writer }}</span>
+										</div>
+									</a>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					{% else %}
+					<div class="inner-text">
+						<h4>抱歉，找不到資料</h4>
+					</div>
+					{% endif%}
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
